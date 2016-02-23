@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="myCtrl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Waitstaff Calculator</title>
+
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+    <!--<![endif]-->
+
+	<link rel="stylesheet" href="css/main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
+  <script src="js/myApp.js"></script>
+
+</head>
+<body>
+	<div ng-class="header"><h1>{{title}}</h1></div>
+
+	<div id="main-content" class="pure-g">
+
+    <div id="left-content" class="pure-u-1 pure-u-md-1-2">
+
+			<div id="meal-details" class="centered">
+				<div class="panel-header">Enter the meal details</div>
+
+				<form name="myForm" class="pure-form pure-form-aligned" novalidate>
+					<div class="pure-control-group">
+						<label for="base-price">Base Meal Price: $</label>
+						<input type="number" name="base-price" id="base-price" ng-model="base-price">
+					</div>
+
+					<div class="pure-control-group">
+						<label for="tax-rate">Tax Rate: %</label>
+						<input type="number" name="tax-rate" id="tax-rate" ng-model="tax-rate">
+					</div>
+
+					<div class="pure-control-group">
+						<label for="tip-percentage">Tip Percentage: %</label>
+						<input type="number" name="tip-percentage" id="tip-percentage" ng-model="tip-percentage">
+					</div>
+
+					<input type="button" value="Submit" class="pure-button pure-button-primary" ng-click="calculate()">
+					<input type="button" value="Clear" class="pure-button pure-button-primary">
+
+				</form>
+
+			</div>
+
+    </div>
+
+    <div id="right-content" class="pure-u-1 pure-u-md-1-2">
+
+			<div id="calc-details" class="centered">
+				<div id="customer-charges">
+					<div class="panel-header">Customer charges</div>
+				</div>
+				<div id="earnings-info">
+					<div class="panel-header">My earnings info</div>
+				</div>
+			</div>
+
+    </div>
+
+	</div>
+	
+</body>
+</html>
