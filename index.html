@@ -26,27 +26,27 @@
 
     <div id="left-content" class="pure-u-1 pure-u-md-1-2">
 
-			<div id="meal-details" class="centered">
+			<div id="meal-details" class="centered panel-style">
 				<div class="panel-header">Enter the meal details</div>
 
-				<form name="myForm" class="pure-form pure-form-aligned" novalidate>
+				<form name="myForm" class="pure-form pure-form-aligned" ng-submit="calculate()">
 					<div class="pure-control-group">
 						<label for="base-price">Base Meal Price: $</label>
-						<input type="number" name="base-price" id="base-price" ng-model="base-price">
+						<input type="number" name="base-price" ng-model="baseprice" step="0.01" required>
 					</div>
 
 					<div class="pure-control-group">
 						<label for="tax-rate">Tax Rate: %</label>
-						<input type="number" name="tax-rate" id="tax-rate" ng-model="tax-rate">
+						<input type="number" name="tax-rate" ng-model="taxrate" required>
 					</div>
 
 					<div class="pure-control-group">
 						<label for="tip-percentage">Tip Percentage: %</label>
-						<input type="number" name="tip-percentage" id="tip-percentage" ng-model="tip-percentage">
+						<input type="number" name="tip-percentage" ng-model="tippercentage" required>
 					</div>
 
-					<input type="button" value="Submit" class="pure-button pure-button-primary" ng-click="calculate()">
-					<input type="button" value="Clear" class="pure-button pure-button-primary">
+					<input type="submit" value="Submit" class="pure-button pure-button-primary">
+					<input type="button" value="Clear" class="pure-button pure-button-primary" ng-click="resetMeal()">
 
 				</form>
 
@@ -57,13 +57,43 @@
     <div id="right-content" class="pure-u-1 pure-u-md-1-2">
 
 			<div id="calc-details" class="centered">
-				<div id="customer-charges">
+				<div id="customer-charges" class="panel-style">
 					<div class="panel-header">Customer charges</div>
+					<div>
+						<span class="item-label">Subtotal</span> 
+						<span class="item-label">{{subtotal | currency:"$":2}}</span>
+					</div>
+					<div>
+						<span class="item-label">Tip</span>
+						<span class="item-label">{{tip | currency:"$":2}}</span>
+					</div>
+					<hr>
+					<div>
+						<span class="item-label">Total</span> 
+						<span class="item-label">{{total | currency:"$":2}}</span>
+					</div>
 				</div>
-				<div id="earnings-info">
+
+				<div id="earnings-info" class="panel-style">
 					<div class="panel-header">My earnings info</div>
+					<div>
+						<span class="item-label">Tip total</span>
+						<span class="item-label">{{tipTotal | currency:"$":2}}</span>
+					</div>
+
+					<div>
+						<span class="item-label">Meal count</span>
+						<span class="item-label">{{mealCount}}</span>
+					</div>
+					<hr>
+					<div>
+						<span class="item-label">Avg tip per meal</span>
+						<span class="item-label">{{avgTip | currency:"$":2}}</span>
+					</div>
 				</div>
 			</div>
+
+			<input type="button" value="Reset" class="pure-button pure-button-primary" ng-click="resetAll()">
 
     </div>
 

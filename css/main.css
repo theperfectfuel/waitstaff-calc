@@ -14,25 +14,29 @@ body {
 #meal-details {
 	max-width: 70%;
 	height: 400px;
-	background-color: #efefef;
 	margin-bottom: 2em;
 }
 
 #calc-details {
 	max-width: 70%;
 	height: 400px;
-	background-color: #efefef;
 }
 
 #customer-charges {
-	background-color: #cfcfcf;
 	margin-bottom: 1em;
 	height: 45%;
+	display: block;
 }
 
 #earnings-info {
-	background-color: #cfcfcf;
 	height: 45%
+}
+
+.panel-style {
+	background-color: #efefef;
+	box-shadow: 1px 1px 9px #cccccc;
+	border-radius: 3px;
+	border: 1px solid #2c2c2c;
 }
 
 .panel-header {
@@ -43,8 +47,26 @@ body {
 	border-bottom: 1px solid #2e2e2e;
 	font-size: 1.2em;
 	font-weight: 500;
+	margin-bottom: 1em;
+}
+
+.panel-item label {
+	text-align: left;
 }
 
 .form-element {
 	padding: .5em;
+}
+
+.item-label {
+	display: inline-block;
+    margin: 0 1em 0 0;
+    text-align: right;
+    vertical-align: middle;
+    width: 7.2em;
+    line-height: 1.4em;
+}
+
+hr {
+	width: 60%;
 }
