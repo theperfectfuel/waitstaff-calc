@@ -11,6 +11,14 @@ body {
 	margin: 0 auto;
 }
 
+#main-content {
+	width: 70%;
+}
+
+#home-content {
+	
+}
+
 #meal-details {
 	max-width: 70%;
 	height: 400px;
@@ -29,7 +37,8 @@ body {
 }
 
 #earnings-info {
-	height: 45%
+	height: 45%;
+	max-width: 70%;
 }
 
 .panel-style {
@@ -69,4 +78,36 @@ body {
 
 hr {
 	width: 60%;
+}
+
+.animate-view.ng-enter, .animate-view.ng-leave{
+  transition: 0.5s linear all;
+}
+
+.animate-view.ng-enter{
+  position: absolute;
+  left: -180px;
+  width: 100%;
+  opacity: 0;
+}
+
+.animate-view.ng-enter.ng-enter-active{
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  opacity: 1;
+}
+
+.animate-view.ng-leave{
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  opacity: 1;
+}
+
+.animate-view.ng-leave.ng-leave-active{
+  position: absolute;
+  left: 180px;
+  width: 100%;
+  opacity: 0;
 }

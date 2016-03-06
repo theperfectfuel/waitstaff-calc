@@ -1,0 +1,24 @@
+<div id="earnings-content" class="pure-u-1">
+
+	<div><h2>-- {{title}} --</h2></div>
+
+	<div id="earnings-info" class="centered panel-style">
+		<div class="panel-header">My earnings info</div>
+		<div>
+			<span class="item-label">Tip total</span>
+			<span class="item-label">{{tipTotal | currency:"$":2}}</span>
+		</div>
+
+		<div>
+			<span class="item-label">Meal count</span>
+			<span class="item-label">{{mealCount}}</span>
+		</div>
+		<hr>
+		<div>
+			<span class="item-label">Avg tip per meal</span>
+			<span class="item-label">{{avgTip | currency:"$":2}}</span>
+		</div>
+	</div>
+</div>
+
+<input type="button" value="Reset" class="pure-button pure-button-primary" ng-click="resetAll()">

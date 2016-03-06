@@ -1,0 +1,51 @@
+<div id="new-meal-content" class="pure-u-1">
+
+	<div><h2>-- {{title}} --</h2></div>
+
+		<div id="meal-details" class="centered panel-style">
+
+			<div class="panel-header">Enter the meal details</div>
+
+			<form name="myForm" class="pure-form pure-form-aligned" ng-submit="calculate()">
+				<div class="pure-control-group">
+					<label for="base-price">Base Meal Price: $</label>
+					<input type="number" name="base-price" ng-model="baseprice" step="0.01" required>
+				</div>
+
+				<div class="pure-control-group">
+					<label for="tax-rate">Tax Rate: %</label>
+					<input type="number" name="tax-rate" ng-model="taxrate" required>
+				</div>
+
+				<div class="pure-control-group">
+					<label for="tip-percentage">Tip Percentage: %</label>
+					<input type="number" name="tip-percentage" ng-model="tippercentage" required>
+				</div>
+
+				<input type="submit" value="Submit" class="pure-button pure-button-primary">
+				<input type="button" value="Clear" class="pure-button pure-button-primary" ng-click="resetMeal()">
+
+			</form>
+
+		</div>
+
+		<div id="calc-details" class="centered">
+			<div id="customer-charges" class="panel-style">
+				<div class="panel-header">Customer charges</div>
+				<div>
+					<span class="item-label">Subtotal</span> 
+					<span class="item-label">{{subtotal | currency:"$":2}}</span>
+				</div>
+				<div>
+					<span class="item-label">Tip</span>
+					<span class="item-label">{{tip | currency:"$":2}}</span>
+				</div>
+				<hr>
+				<div>
+					<span class="item-label">Total</span> 
+					<span class="item-label">{{total | currency:"$":2}}</span>
+				</div>
+			</div>
+		</div>
+
+</div>
